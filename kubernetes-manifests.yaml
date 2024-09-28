@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: dede1443/currencyservice:latest
+        image: maydel/currencyservice:latest
         ports:
         - name: grpc
           containerPort: 7000
@@ -80,7 +80,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: dede1443/loadgenerator:latest
+        image: maydel/loadgenerator:latest
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
@@ -111,7 +111,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: dede1443/productcatalogservice:latest
+        image: maydel/productcatalogservice:latest
         ports:
         - containerPort: 3550
         env:
@@ -162,7 +162,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: dede1443/checkoutservice:latest
+          image: maydel/checkoutservice:latest
           ports:
           - containerPort: 5050
           readinessProbe:
@@ -223,7 +223,7 @@ spec:
       serviceAccountName: default
       containers:
       - name: server
-        image: dede1443/shippingservice:latest
+        image: maydel/shippingservice:latest
         ports:
         - containerPort: 50051
         env:
@@ -276,7 +276,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: dede1443/cartservice:latest
+        image: maydel/cartservice:latest
         ports:
         - containerPort: 7070
         env:
@@ -394,7 +394,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: dede1443/emailservice:latest
+        image: maydel/emailservice:latest
         ports:
         - containerPort: 8080
         env:
@@ -448,7 +448,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: dede1443/paymentservice:latest
+        image: maydel/paymentservice:latest
         ports:
         - containerPort: 50051
         env:
@@ -501,7 +501,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: dede1443/frontend:latest
+          image: maydel/frontend:latest
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -598,7 +598,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: dede1443/recommendationservice:latest
+        image: maydel/recommendationservice:latest
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -654,7 +654,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: dede1443/adservice:latest
+        image: maydel/adservice:latest
         ports:
         - containerPort: 9555
         env:
