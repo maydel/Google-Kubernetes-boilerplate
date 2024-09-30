@@ -2,8 +2,8 @@
     "products": [
         {
             "id": "OLJCESPC7Z",
-            "name": "Sunglasses Gucci",
-            "description": "Add a modern touch to your outfits with these sleek aviator sunglasses.",
+            "name": "Gucci",
+            "description": "Add a modern touch to your outfits with these sleek aviator gucci.",
             "picture": "/static/img/products/sunglasses.jpg",
             "priceUsd": {
                 "currencyCode": "USD",
@@ -12,18 +12,7 @@
             },
             "categories": ["accessories"]
         },
-        {
-            "id": "66VCHSJNUP",
-            "name": "Tank Top",
-            "description": "Perfectly cropped cotton tank, with a scooped neckline.",
-            "picture": "/static/img/products/tank-top.jpg",
-            "priceUsd": {
-                "currencyCode": "USD",
-                "units": 18,
-                "nanos": 990000000
-            },
-            "categories": ["clothing", "tops"]
-        },
+        
         {
             "id": "1YMWWN1N4O",
             "name": "Watch",
