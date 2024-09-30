@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/currencyservice/'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/currencyservice/'){
                sh "docker build -t maydel/currencyservice:latest . "
                sh "docker push maydel/currencyservice:latest "
                sh "docker rmi maydel/currencyservice:latest "
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/loadgenerator/'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/loadgenerator/'){
                sh "docker build -t maydel/loadgenerator:latest . "
                sh "docker push maydel/loadgenerator:latest "
                sh "docker rmi maydel/loadgenerator:latest "
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/productcatalogservice/'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/productcatalogservice/'){
                sh "docker build -t maydel/productcatalogservice:latest . "
                sh "docker push maydel/productcatalogservice:latest "
                sh "docker rmi maydel/productcatalogservice:latest "
@@ -51,7 +51,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/checkoutservice/'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/checkoutservice/'){
                sh "docker build -t maydel/checkoutservice:latest . "
                sh "docker push maydel/checkoutservice:latest "
                sh "docker rmi maydel/checkoutservice:latest "
@@ -64,7 +64,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/shippingservice/'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/shippingservice/'){
                sh "docker build -t maydel/shippingservice:latest . "
                sh "docker push maydel/shippingservice:latest "
                sh "docker rmi maydel/shippingservice:latest "
@@ -77,7 +77,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/cartservice/src'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/cartservice/src'){
                sh "docker build -t maydel/cartservice:latest . "
                sh "docker push maydel/cartservice:latest "
                sh "docker rmi maydel/cartservice:latest "
@@ -90,7 +90,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/emailservice'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/emailservice'){
                sh "docker build -t maydel/emailservice:latest . "
                sh "docker push maydel/emailservice:latest "
                sh "docker rmi maydel/emailservice:latest "
@@ -103,7 +103,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/paymentservice'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/paymentservice'){
                sh "docker build -t maydel/paymentservice:latest . "
                sh "docker push maydel/paymentservice:latest "
                sh "docker rmi maydel/paymentservice:latest "
@@ -116,7 +116,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/frontend'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/frontend'){
                sh "docker build -t maydel/frontend:latest . "
                sh "docker push maydel/frontend:latest "
                sh "docker rmi maydel/frontend:latest "
@@ -129,7 +129,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/recommendationservice'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/recommendationservice'){
                sh "docker build -t maydel/recommendationservice:latest . "
                sh "docker push maydel/recommendationservice:latest "
                sh "docker rmi maydel/recommendationservice:latest "
@@ -142,7 +142,7 @@ pipeline {
             steps {
                 script {
                withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
-                   dir('/var/lib/jenkins/workspace/project/app/adservice'){
+                   dir('/var/lib/jenkins/workspace/project-1/app/adservice'){
                sh "docker build -t maydel/adservice:latest . "
                sh "docker push maydel/adservice:latest "
                sh "docker rmi maydel/adservice:latest "
@@ -153,7 +153,7 @@ pipeline {
         stage('deploy to kubernetes') {
             steps {
                 script {
-               withKubeConfig(caCertificate: '', clusterName: 'project1', contextName: '', credentialsId: 'Kubernetes', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://CEB0D8E321AF85F209B8F92FE240829D.gr7.ca-central-1.eks.amazonaws.com') {
+               withKubeConfig(caCertificate: '', clusterName: 'project3', contextName: '', credentialsId: 'Kubernetes', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://BB6D664F30CF2205AFFA87CBF38D42DD.yl4.ca-central-1.eks.amazonaws.com') {
                   sh "kubectl apply -f kubernetes-manifests.yaml"
 }
     }
